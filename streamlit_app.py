@@ -11,7 +11,7 @@ import base64
 
 # Page config
 st.set_page_config(
-    page_title="EcoSat Monitor Pro", 
+    page_title="satellite image", 
     layout="wide",
     initial_sidebar_state="expanded",
     page_icon="🌍"
@@ -119,8 +119,8 @@ if "favorite_regions" not in st.session_state:
 
 # Enhanced Sidebar
 st.sidebar.markdown('<div class="sidebar-content">', unsafe_allow_html=True)
-st.sidebar.title("🌍 EcoSat Monitor Pro")
-st.sidebar.markdown("**AI-powered satellite land cover analysis**")
+st.sidebar.title("satellite image")
+
 st.sidebar.markdown('</div>', unsafe_allow_html=True)
 
 # Sidebar Controls
@@ -130,15 +130,8 @@ region = st.sidebar.selectbox(
     ["Global", "Americas", "Europe", "Asia", "Africa", "Oceania", "Antarctica"]
 )
 
-time_range = st.sidebar.selectbox(
-    "Select Time Range", 
-    ["Real-time", "7d", "30d", "90d", "1y", "5y"]
-)
 
-analysis_type = st.sidebar.selectbox(
-    "Analysis Type",
-    ["Land Cover", "Change Detection", "Environmental Health", "Vegetation Index", "Water Quality", "Urban Growth"]
-)
+
 
 # Model Settings
 st.sidebar.markdown("### 🤖 Model Settings")
@@ -169,8 +162,7 @@ st.sidebar.metric("Avg Confidence", f"{np.mean([item['confidence'] for item in s
 # Main Header
 st.markdown("""
 <div class="main-header">
-    <h1>📡 EcoSat Monitor Pro</h1>
-    <p>Advanced AI-powered satellite image analysis for environmental monitoring</p>
+    <h1>📡 satellite image</h1>
 </div>
 """, unsafe_allow_html=True)
 
@@ -511,12 +503,4 @@ with tab4:
         else:
             st.error("❌ Please provide both API endpoint and key")
 
-# Footer
-st.markdown("---")
-st.markdown("""
-<div style="text-align: center; padding: 2rem; background: linear-gradient(90deg, #667eea, #764ba2); color: white; border-radius: 10px;">
-    <h4>🌍 EcoSat Monitor Pro</h4>
-    <p>Empowering environmental monitoring through AI-powered satellite analysis</p>
-    <p>Version 3.2.1 | © 2024 EcoSat Technologies</p>
-</div>
-""", unsafe_allow_html=True)
+
